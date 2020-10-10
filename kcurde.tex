@@ -1,0 +1,142 @@
+\documentclass[11pt,letterpaper,ragged2e]{altacv}
+\geometry{left=2cm,right=10cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+\ifxetexorluatex
+  \setmainfont{Carlito}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+\fi
+\definecolor{VividPurple}{HTML}{000000}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{2E2E2E}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{KLAUS CURDE}
+\tagline{Software Engineer}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%\photo{3.3cm}{profile.jpg}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{kcurde@gmail.com}
+%   \phone{000-00-0000}
+%  \mailaddress{Address, Street, 00000 County}
+%  \location{Rochester, NY - USA}
+%  \homepage{marissamayr.tumblr.com/}
+%  \twitter{@marissamayer}
+  \phone{(724) 718-7281}
+  \github{ github.com/klauscurde}
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[sidebar]{Projects}
+\cvproject{ritlinks \hfill August 2020 - Current}
+\begin{itemize}
+\item Used Django to create a dynamically generated website that lists a collection of all the websites RIT makes available to students as well as their descriptions.
+\item Employs the Nginx webserver run on Fedora Linux.
+\item Helps new students understand which services do what, and has administrator accounts to manage adding and removing content as relevant.
+\item Runs in a Docker container.
+\end{itemize}
+\smallskip
+\smallskip
+\cvproject{HuntedRC Car \hfill May 2018 - July 2020}
+\begin{itemize}
+\item Designed the electronic internals of a remote control car that can be remotely controlled from up to 1 kilometer away.
+\item Uses an NRF24L01 wireless module with a self-designed wireless protocol, an L298N H-bridge motor controller, and \\ Arduino Mega and Nano microcontroller boards.
+\item Coded in C++ and uses a custom designed controller. Internals are a prototype for modifying a Barbie Jeep to be wirelessly controlled as a safe, moving hunting target.
+\end{itemize}
+\smallskip
+\smallskip
+\cvproject{LifeSym \hfill January 2020 - July 2020}
+\begin{itemize}
+\item Designed a Java application that simulates the human body to provide health recommendations.
+\item Utilizes Metabolic Equivalent (MET) data values sourced from an academic paper to calculate an estimate of the amount of calories consumed during specific activities.
+\end{itemize}
+\smallskip
+\smallskip
+\cvproject{CookC \hfill September 2020}
+\begin{itemize}
+\item Wrote a small game in Python that exists entirely as an array displayed in a character LCD.
+\item Runs on a Raspberry Pi Zero W that is connected to the \\ internal power of a ThinkPad X230 laptop.
+\end{itemize}
+
+%\divider
+\cvsection{EXPERIENCE}
+\cvproject{FTC Robotics Robot \hfill September 2017 - May 2019}
+\smallskip
+\begin{itemize}
+\item Supervised an FTC Robotics team as the lead programmer and one of its founding members.
+\item Advanced to a state competition.
+\item Wrote the codebase in Java using the ftc\_app library.
+\item Mentored other members to be able to continue maintaining the project.
+\end{itemize}
+
+
+% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
+
+% \begin{itemize}
+% \item Joined the company as employe \#20 and female employee \#1
+% \item Developed targeted advertisement in order to use user's search queries and show them related ads
+% \end{itemize}
+
+%\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/10em/accent!30/Sleeping \& dreaming about work,
+%   25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
+%   5/13em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
+%   20/15em/accent!40/Spending time with family,
+%   5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
+%   30/9em/accent/Showing Yahoo!\ employees that their work has meaning,
+%   5/8em/accent!20/Baking cupcakes
+% }
+
+\clearpage
+
+% \cvsection[page2sidebar]{Publications}
+
+\nocite{*}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faFileTextO}{Journal Articles}}, type=article]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faGroup}{Conference Proceedings}},type=inproceedings]
+
+% %% If the NEXT page doesn't start with a \cvsection but you'd
+% %% still like to add a sidebar, then use this command on THIS
+% %% page to add it. The optional argument lets you pull up the
+% %% sidebar a bit so that it looks aligned with the top of the
+% %% main column.
+% % \addnextpagesidebar[-1ex]{page3sidebar}
+
+
+\end{document}
