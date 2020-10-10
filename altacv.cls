@@ -39,6 +39,7 @@
 \RequirePackage{fontawesome}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
+\RequirePackage{hyperref}
 
 %% v1.1.5: added for convenience
 \newif\ifxetexorluatex
@@ -94,9 +95,15 @@
   \RequirePackage[newcommands]{ragged2e}
 \fi
 
+
 \RequirePackage{xcolor}
 
-\colorlet{accent}{blue!70!black}
+\definecolor{accent}{HTML}{004747}
+% \definecolor{bigline}{HTML}{328484}
+\definecolor{bigline}{HTML}{004747}
+\definecolor{highlight}{HTML}{4c4c4c}
+
+% \colorlet{accent}{blue!70!black}
 \colorlet{heading}{black}
 \colorlet{emphasis}{black}
 \colorlet{body}{black!80!white}
@@ -128,7 +135,7 @@
 \newcommand{\homepagesymbol}{\faChain}
 \newcommand{\locationsymbol}{\faMapMarker}
 \newcommand{\linkedinsymbol}{\faLinkedin}
-\newcommand{\github}{\faGithub}
+% \newcommand{\github}{\faGithub}
 \newcommand{\twittersymbol}{\faTwitter}
 \newcommand{\githubsymbol}{\faGithub}
 \newcommand{\orcidsymbol}{\aiOrcid}
@@ -178,7 +185,7 @@
   \bigskip%
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
   {\color{heading}\LARGE\bfseries\MakeUppercase{#2}}\\[-1ex]%
-  {\color{heading}\rule{\linewidth}{2pt}\par}\medskip
+  {\color{bigline}\rule{\linewidth}{2pt}\par}\medskip
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -193,7 +200,7 @@
   \ifstrequal{#2}{}{}{
   \textbf{\color{accent}#2}\par
   \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
+  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\color{accent}\faCalendar\hspace{0.5em}\color{black}#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
   \medskip\normalsize
 }
@@ -206,9 +213,26 @@
   %\smallskip
 }
 
-\newcommand{\cvproject}[1]{%
-  {\textbf{\color{accent}#1}\par}
-  \smallskip\normalsize
+\newcommand{\cvproject}[5]{%
+  {\color{emphasis}\textbf{#1} \color{highlight}| \textbf{\scriptsize#4}\par}
+  \smallskip
+  {\footnotesize\textbf{\color{accent}#2}\par}
+  \smallskip
+  {\footnotesize\color{body}#3\par}
+  \medskip
+}
+
+\newcommand{\cvactivity}[3]{%
+    % {\textbf{\color{accent}#1}\par}
+    %   \smallskip\normalsize
+    {\textbf{#1} - \footnotesize{\color{highlight}#2}\par}
+    \smallskip
+    {\footnotesize\color{accent}#3\par}
+    \medskip
+}
+\newcommand{\cvcourse}[2]{%
+  {\color{black}\textbf{#1}\par}
+  {\smallskip\footnotesize#2\par\medskip}
 }
 
 \newcommand{\cvtag}[1]{%
