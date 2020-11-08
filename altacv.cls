@@ -225,9 +225,9 @@
 \newcommand{\cvactivity}[3]{%
     % {\textbf{\color{accent}#1}\par}
     %   \smallskip\normalsize
-    {\textbf{#1} - \footnotesize{\color{highlight}#2}\par}
+    {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
     \smallskip
-    {\footnotesize\color{accent}#3\par}
+    {\small\color{body}#3\par}
     \medskip
 }
 \newcommand{\cvcourse}[2]{%
