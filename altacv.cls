@@ -214,7 +214,7 @@
 }
 
 \newcommand{\cvproject}[5]{%
-  {\color{emphasis}\textbf{#1} \color{highlight}| \textbf{\scriptsize#4}\par}
+  {\color{emphasis}\textbf{#1} \color{highlight} \textbf{\scriptsize#4}\par}
   \smallskip
   {\footnotesize\textbf{\color{accent}#2}\par}
   \smallskip
