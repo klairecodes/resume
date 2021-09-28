@@ -162,7 +162,7 @@
   \begingroup
     \ifdef{\@photodiameter}{\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}}{}%
     \raggedright\color{emphasis}%
-    {\Huge\bfseries\MakeUppercase{\@name}\par}
+    {\fontsize{36}{36}\bfseries\MakeUppercase{\@name}\par}
     \medskip
     {\large\bfseries\color{accent}\@tagline\par}
     \medskip
