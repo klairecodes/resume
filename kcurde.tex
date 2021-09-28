@@ -1,5 +1,5 @@
 \documentclass[11pt,letterpaper,ragged2e]{altacv}
-\geometry{left=2cm,right=10cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1.25cm}
 \ifxetexorluatex
   \setmainfont{Carlito}
 \else
@@ -55,12 +55,13 @@
 
 \cvsection{Projects}
 
-\cvproject{ritlinks}{\href{https://github.com/klauscurde/ritlinks}{github.com/klauscurde/ritlinks}}
+\cvproject{ritlinks}{\href{https://github.com/klauscurde/ritlinks}{github.com/klauscurde/ritlinks} | \href{https://ritlinks.com}{https://ritlinks.com}}
 {
 \begin{itemize}
-    \item Used the Python web framework Django to create a dynamically generated website that lists a collection of all the websites RIT makes available to students as well as their descriptions.
-    \item Helps new students understand which services do what, and has administrator accounts to manage adding and removing content as relevant.
-    \item Runs in a Docker container.
+    \item Developed a website using Django and self-designed Bootstrap 4 templates to dynamically generate a list of all the websites RIT makes available to students as well as their uses.
+    \item Runs in a Docker container and is deployed on an OKD 4 cluster.
+    \item Implemented administrator accounts to manage adding and removing content with drag-and-drop controls and forms.
+    \item Helps new students understand which services do what, and was well received by incoming Freshmen.
 \end{itemize}
 }
 {}
