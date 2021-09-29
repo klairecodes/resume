@@ -228,7 +228,7 @@
       \smallskip\normalsize
     {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
     \smallskip
-    {\small\color{body}#3\par}
+    {\footnotesize\color{highlight}#3\par}
     \medskip
 }
 
