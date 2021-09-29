@@ -202,6 +202,7 @@
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\color{accent}\faCalendar\hspace{0.5em}\color{black}#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
+
   \medskip\normalsize
 }
 
@@ -223,18 +224,53 @@
 }
 
 \newcommand{\cvactivity}[3]{%
-    % {\textbf{\color{accent}#1}\par}
-    %   \smallskip\normalsize
+    {\textbf{\color{accent}#1}\par}
+      \smallskip\normalsize
     {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
     \smallskip
     {\small\color{body}#3\par}
     \medskip
 }
+
+% command for having an activity with multiple roles w/durations
+% currently looks disgusting
+\newcommand{\cvmultiactivitycsh}[8]{%
+    {\textbf{\color{body}#1}\par}
+      \smallskip\normalsize
+    % {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
+    % \smallskip
+    {\small\color{accent}#2\par}
+      \smallskip
+      {\footnotesize\faCalendar\, #3\par}
+      \smallskip
+    {\small\color{accent}#4\par}
+      \smallskip
+      {\footnotesize\faCalendar\, #5\par}
+      \smallskip
+    {\small\color{accent}#6\par}
+      \smallskip
+      {\footnotesize\faCalendar\, #7\par}
+      \smallskip
+    {\small\color{body}#8\par}
+    \medskip
+}
+
+\newcommand{\cvmultiactivityra}[4]{%
+    {\textbf{\color{body}#1}\par}
+      \smallskip\normalsize
+    % {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
+    % \smallskip
+    {\small\color{accent}#2\par}
+      \smallskip
+      {\footnotesize\faCalendar\, #3\par}
+    {\small\color{body}#4\par}
+    \medskip
+}
+
 \newcommand{\cvcourse}[2]{%
   {\color{black}\textbf{#1}\par}
   {\smallskip\footnotesize#2\par\medskip}
 }
-
 \newcommand{\cvtag}[1]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
