@@ -220,7 +220,7 @@
   {\footnotesize\textbf{\color{accent}#2}\par}
   \smallskip
   {\footnotesize\color{body}#3\par}
-  \medskip
+  \smallskip
 }
 
 \newcommand{\cvactivity}[3]{%
@@ -237,8 +237,6 @@
 \newcommand{\cvmultiactivitycsh}[8]{%
     {\textbf{\color{body}#1}\par}
       \smallskip\normalsize
-    % {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
-    % \smallskip
     {\small\color{accent}#2\par}
       \smallskip
       {\footnotesize\faCalendar\, #3\par}
@@ -263,6 +261,7 @@
     {\small\color{accent}#2\par}
       \smallskip
       {\footnotesize\faCalendar\, #3\par}
+      \smallskip
     {\small\color{body}#4\par}
     \medskip
 }
