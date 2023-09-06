@@ -1,14 +1,13 @@
-kcurde.bcf
-kcurde.run.xml
-kcurde.synctex.gz
-kcurde.out
-kcurde.fls
-kcurde.fdb_latexmk
-kcurde.log
-kcurde.blg
-kcurde.bbl
-kcurde.aux
-Resume.code-workspace
-Klaus_Curde_Resume.pdf
-Curde_Klaus_Resume.pdf
-Klaus Curde Resume.pdf
+*.pdf
+!kcurde.pdf
+*.bcf
+*.run.xml
+*.synctex.gz
+*.out
+*.fls
+*.fdb_latexmk
+*.log
+*.blg
+*.bbl
+*.aux
+*.code-workspace

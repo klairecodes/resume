@@ -1,8 +1,0 @@
-#!/bin/zsh
-
-rm -f Curde_Klaus_Resume.pdf
-echo "Removed old resume."
-cp kcurde.pdf Curde_Klaus_Resume.pdf
-echo "Copied current resume file."
-echo "Done."
-
