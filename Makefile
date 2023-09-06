@@ -22,12 +22,11 @@ replace_name = \
 ${output_file}: ${sources}
 	pdflatex ${sources}
 
-## : Compiles all files and generates a copy with a pretty name.
-pretty: ## Compiles all files 
+pretty: ## Compiles all files and generates a copy with a pretty name.
 	pdflatex ${sources}
 	cp ${output_file} ${pretty_file}
 
-dead: ## Compiles all files and generates a copy with a dead name.
+dead: ## Compiles all files and generates a copy with a dead name/change.
 	$(call replace_name,name1,name2)
 	pdflatex ${sources}
 	cp ${output_file} ${pretty_file_dead}
