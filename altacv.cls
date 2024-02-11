@@ -36,7 +36,7 @@
 \LoadClass{extarticle}
 
 \RequirePackage[margin=2cm]{geometry}
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{hyperref}
