@@ -15,8 +15,9 @@
 % - https://github.com/akreuzer Added ragged2e option (5 Nov 2018)
 % - https://github.com/stefanogermano Fixed bad boxes and undefined font shape (July 2018)
 % - https://github.com/foohyfooh Fixed blank spaces in \cvevent and bad link in README.md (June 2018)
-
+% - https://github.com/klairecodes A lot of custom modifications
 %%%%%%%%%%%%%%%%
+
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 %% v1.4: Detect TL2018 to handle accented characters in class information
 \@ifl@t@r\fmtversion{2018/04/01}{\UseRawInputEncoding}{}
@@ -214,13 +215,32 @@
   %\smallskip
 }
 
-\newcommand{\cvproject}[5]{%
-  {\color{emphasis}\textbf{#1} \color{highlight} \textbf{\scriptsize#4}\par}
+% 1: Position
+% 2: Company
+% 3: Bullet list
+% 4: Date
+\newcommand{\cvexperience}[5]{%
+  {\color{emphasis}\textbf{#1} | \hfill {\footnotesize\textbf{\color{accent}#2}}
+  \hfill | \color{highlight} \textbf{\scriptsize#4}\par}
   \smallskip
+  {\footnotesize\color{body}#3\par}
+  \smallskip
+  {#5}
+  \medskip
+}
+
+% 1: Project Name
+% 2: Link(s)
+% 3: Bullet list
+% 4: Skills
+\newcommand{\cvproject}[4]{%
+  {\color{emphasis}\textbf{#1} \hfill \color{highlight}}
   {\footnotesize\textbf{\color{accent}#2}\par}
   \smallskip
   {\footnotesize\color{body}#3\par}
   \smallskip
+  {#4}
+  \medskip
 }
 
 \newcommand{\cvactivity}[3]{%
