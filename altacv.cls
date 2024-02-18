@@ -271,7 +271,11 @@
   {\smallskip\footnotesize#2\par\medskip}
 }
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+  \tikz[baseline]\node[anchor=base,draw=body!40,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+\newcommand{\cvtagsmall}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!40,rounded corners,inner xsep=1ex,inner ysep =0.25ex,text height=1.0ex,text depth=.25ex]{#1};
 }
 
 \newcommand{\cvskill}[2]{%
