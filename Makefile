@@ -20,18 +20,18 @@ replace_name = \
 
 ## : Compiles all files.
 ${output_file}: ${sources}
-	#latexindent -w $(word 1,$(sources)) # Formats only first file
 	latexindent -w ${sources}
-	latexmk -pdf ${sources}
+	#$(word 1,$(sources)) # Accesses only first file
+	latexmk -pdf $(word 1,$(sources))
 
 pretty: ## Compiles all files and generates a copy with a pretty name.
 	latexindent -w ${sources}
-	latexmk -pdf ${sources}
+	latexmk -pdf $(word 1,$(sources))
 	cp ${output_file} ${pretty_file}
 
 dead: ## Compiles all files and generates a copy with a dead name/change.
 	$(call replace_name,name1,name2)
-	pdflatex ${sources}
+	latexmk -pdf $(word 1,$(sources))
 	cp ${output_file} ${pretty_file_dead}
 	$(call replace_name,name2,name1)
 
