@@ -20,10 +20,13 @@ replace_name = \
 
 ## : Compiles all files.
 ${output_file}: ${sources}
-	pdflatex ${sources}
+	#latexindent -w $(word 1,$(sources)) # Formats only first file
+	latexindent -w ${sources}
+	latexmk -pdf ${sources}
 
 pretty: ## Compiles all files and generates a copy with a pretty name.
-	pdflatex ${sources}
+	latexindent -w ${sources}
+	latexmk -pdf ${sources}
 	cp ${output_file} ${pretty_file}
 
 dead: ## Compiles all files and generates a copy with a dead name/change.
@@ -34,7 +37,7 @@ dead: ## Compiles all files and generates a copy with a dead name/change.
 
 clean: ## Removes all compiled files.
 	rm -f ${output_file} ${pretty_file} ${pretty_file_dead}
-	rm -f *.bcf *.run.xml *.synctex.gz *.out *.fls *.fdb_latexmk *.log *.blg *.bbl *.aux
+	rm -f *.bcf *.run.xml *.synctex.gz *.out *.fls *.fdb_latexmk *.log *.blg *.bbl *.aux *.bak?
 
 define help_text
 -------------------------------------------------------------------------------
