@@ -141,6 +141,7 @@
 \newcommand{\githubsymbol}{\faGithub}
 \newcommand{\orcidsymbol}{\aiOrcid}
 \newcommand{\mailsymbol}{\faEnvelope}
+\newcommand{\sitesymbol}{\faCoffee}
 
 \newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{\normalfont #1}\hspace{0.5em}#2\hspace{2em}}}
 
@@ -156,27 +157,28 @@
 \newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
 \newcommand{\orcid}[1]{\printinfo{\orcidsymbol}{#1}}
 \newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
+\newcommand{\site}[1]{\printinfo{\sitesymbol}{#1}}
 
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 
 \newcommand{\makecvheader}{%
   \begingroup
-  \ifdef{\@photodiameter}{\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}}{}%
-      \raggedright\color{emphasis}%
-      {\fontsize{36}{36}\bfseries\MakeUppercase{\@name}\par}
-      \medskip
-      {\large\bfseries\color{accent}\@tagline\par}
-      \medskip
-      {\footnotesize\bfseries\@personalinfo\par}
-      \ifdef{\@photodiameter}{%
-    \end{minipage}\hfill%
-    \begin{minipage}{\@photodiameter}
-      \if@normalphoto
-        \includegraphics[width=\linewidth]{\@photo}
-      \else
-        \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
-      \fi%
-    \end{minipage}\par}{}%
+  %\ifdef{\@photodiameter}{\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}}{}%
+  \raggedright\color{emphasis}%
+  {\fontsize{36}{36}\bfseries\MakeUppercase{\@name}\par}
+  \medskip
+  {\large\bfseries\color{accent}\@tagline\par}
+  \medskip
+  {\footnotesize\bfseries\@personalinfo\par}
+  %\ifdef{\@photodiameter}{%
+  %\end{minipage}\hfill%
+  %\begin{minipage}{\@photodiameter}
+  %\if@normalphoto
+  %\includegraphics[width=\linewidth]{\@photo}
+  %\else
+  %\tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
+  %\fi%
+  %\end{minipage}\par}{}%
   \endgroup\medskip
 }
 
@@ -190,7 +192,6 @@
 }
 
 \newcommand{\cvsubsection}[1]{%
-  \smallskip%
   {\color{emphasis}\large\bfseries{#1}\par}\medskip
 }
 
@@ -208,7 +209,7 @@
 }
 
 \newcommand{\adate}[1]{
-  \hfill{\scriptsize\color{accent}\faCalendar\textbf{ | #1}}
+  {\scriptsize| \color{accent}\faCalendar\textbf{ #1}}
 }
 
 % 1: School
@@ -216,7 +217,7 @@
 % 3: Degree
 % 4: Graduation Date
 \newcommand{\cvedu}[4]{
-  {\color{emphasis}#1}
+  {\color{emphasis}#1}\newline
   \footnotesize
   \textbf{#2} \color{accent}\faCalendar{ #3}\par
 }
@@ -234,13 +235,13 @@
 % 3: Bullet list
 % 4: Date
 \newcommand{\cvexperience}[5]{%
-  {\color{emphasis}\textbf{#1} | \hfill {\footnotesize\textbf{\color{accent}#2}}
-      \hfill | \color{highlight} \textbf{\scriptsize\color{accent}#4}\par}
-  \smallskip
-  {\footnotesize\color{body}#3\par}
-  \smallskip
-  {#5}
-  \medskip
+{\color{emphasis}\textbf{#1} | {\footnotesize\textbf{\color{accent}#2}}
+| \color{highlight} \textbf{\scriptsize\color{accent}#4}\par}
+\smallskip
+{\footnotesize\color{body}#3\par}
+\smallskip
+{#5}
+\medskip
 }
 
 % 1: Project Name
@@ -261,57 +262,15 @@
 % 2: Position(s)
 % 3: Bullet list
 \newcommand{\cvactivity}[4]{%
+  \normalsize
   {\color{emphasis}\textbf{#1}\hfill\par}
+  \footnotesize
   #2
   \smallskip
-  \normalsize
   \begin{itemize}
-    {\footnotesize\color{body}#3\par}
+    {\small\color{body}#3\par}
   \end{itemize}
   \smallskip
-}
-
-%\newcommand{\cvactivity}[3]{%
-%{\textbf{\color{accent}#1}\par}
-%\smallskip\normalsize
-%{\textbf{#1}\footnotesize{\color{highlight}#2}\par}
-%\smallskip
-%{\footnotesize\color{highlight}#3\par}
-%\medskip
-%}
-
-% command for having an activity with multiple roles w/durations
-% currently looks disgusting
-\newcommand{\cvmultiactivitycsh}[8]{%
-  {\textbf{\color{body}#1}\par}
-  \smallskip\normalsize
-  {\small\color{accent}#2\par}
-  \smallskip
-  {\footnotesize\faCalendar\, #3\par}
-  \smallskip
-  {\small\color{accent}#4\par}
-  \smallskip
-  {\footnotesize\faCalendar\, #5\par}
-  \smallskip
-  {\small\color{accent}#6\par}
-  \smallskip
-  {\footnotesize\faCalendar\, #7\par}
-  \smallskip
-  {\small\color{body}#8\par}
-  \medskip
-}
-
-\newcommand{\cvmultiactivityra}[4]{%
-  {\textbf{\color{body}#1}\par}
-  \smallskip\normalsize
-  % {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
-  % \smallskip
-  {\small\color{accent}#2\par}
-  \smallskip
-  {\footnotesize\faCalendar\, #3\par}
-  \smallskip
-  {\small\color{body}#4\par}
-  \medskip
 }
 
 \newcommand{\cvcourse}[2]{%

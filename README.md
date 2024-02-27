@@ -19,6 +19,7 @@ Simply run the following to build the container with the tag "resume":
 ```
 podman build -t resume .
 ```
+or use the included `build.sh` script.
 
 ### Arch Linux
 #### Dependencies
@@ -28,6 +29,7 @@ podman build -t resume .
 
 ##### latexindent:
 To install  follow the latexindent documentation found [here](https://latexindentpl.readthedocs.io/en/latest/sec-how-to-use.html).
+
 - perl
 - cpanminus
 
@@ -37,6 +39,7 @@ To install  follow the latexindent documentation found [here](https://latexinden
 ```
 podman run -v ./:/src -i resume:latest
 ```
+or use the included `run.sh` script.
 
 ### Arch Linux
 The included Makefile can be run as is with
