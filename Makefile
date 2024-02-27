@@ -6,7 +6,7 @@
 # ---------------------------------------------------------------------------
 
 sources := main.tex sidebar.tex altacv.cls
-output_file := kcurde.pdf
+output_file := kcurde # file extension will be appended
 pretty_file := Curde_Klaire_Resume.pdf
 pretty_file_dead := Curde_Klaus_Resume.pdf
 name1 := KLAIRE
