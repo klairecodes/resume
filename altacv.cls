@@ -207,6 +207,20 @@
   \medskip\normalsize
 }
 
+\newcommand{\adate}[1]{
+  \hfill{\scriptsize\color{accent}\faCalendar\textbf{ | #1}}
+}
+
+% 1: School
+% 2: Major
+% 3: Degree
+% 4: Graduation Date
+\newcommand{\cvedu}[4]{
+  {\color{emphasis}#1}
+  \footnotesize
+  \textbf{#2} \color{accent}\faCalendar{ #3}\par
+}
+
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
     \multirow{4}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2} \\
@@ -221,7 +235,7 @@
 % 4: Date
 \newcommand{\cvexperience}[5]{%
   {\color{emphasis}\textbf{#1} | \hfill {\footnotesize\textbf{\color{accent}#2}}
-      \hfill | \color{highlight} \textbf{\scriptsize#4}\par}
+      \hfill | \color{highlight} \textbf{\scriptsize\color{accent}#4}\par}
   \smallskip
   {\footnotesize\color{body}#3\par}
   \smallskip
@@ -243,14 +257,28 @@
   \medskip
 }
 
-\newcommand{\cvactivity}[3]{%
-  {\textbf{\color{accent}#1}\par}
-  \smallskip\normalsize
-  {\textbf{#1}\footnotesize{\color{highlight}#2}\par}
+% 1: Activity Name
+% 2: Position(s)
+% 3: Bullet list
+\newcommand{\cvactivity}[4]{%
+  {\color{emphasis}\textbf{#1}\hfill\par}
+  #2
   \smallskip
-  {\footnotesize\color{highlight}#3\par}
-  \medskip
+  \normalsize
+  \begin{itemize}
+    {\footnotesize\color{body}#3\par}
+  \end{itemize}
+  \smallskip
 }
+
+%\newcommand{\cvactivity}[3]{%
+%{\textbf{\color{accent}#1}\par}
+%\smallskip\normalsize
+%{\textbf{#1}\footnotesize{\color{highlight}#2}\par}
+%\smallskip
+%{\footnotesize\color{highlight}#3\par}
+%\medskip
+%}
 
 % command for having an activity with multiple roles w/durations
 % currently looks disgusting
@@ -291,7 +319,17 @@
     {\smallskip\footnotesize#2\par\medskip}
 }
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=body!40,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+  \tikz[baseline]\node[
+    anchor=base,
+    draw=body!40,
+    thick,
+    rounded corners,
+    inner xsep=1ex,
+    inner ysep =0.75ex,
+    text height=1.5ex,
+    text depth=.25ex
+  ]
+  {#1};
 }
 
 \newcommand{\cvtagsmall}[1]{%
