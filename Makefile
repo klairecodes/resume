@@ -35,6 +35,9 @@ dead: ## Compiles all files and generates a copy with a dead name/change.
 	cp ${output_file} ${pretty_file_dead}
 	$(call replace_name,name2,name1)
 
+format: ## Formats all sources with latexmk.
+	latexmk -pdf $(word 1,$(sources))
+
 clean: ## Removes all compiled files.
 	rm -f ${output_file} ${pretty_file} ${pretty_file_dead}
 	rm -f *.bcf *.run.xml *.synctex.gz *.out *.fls *.fdb_latexmk *.log *.blg *.bbl *.aux *.bak?
