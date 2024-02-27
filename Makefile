@@ -22,7 +22,7 @@ replace_name = \
 ${output_file}: ${sources}
 	latexindent -w ${sources}
 	#$(word 1,$(sources)) # Accesses only first file
-	latexmk -pdf $(word 1,$(sources))
+	latexmk -pdf -jobname=${output_file} $(word 1,$(sources))
 
 pretty: ## Compiles all files and generates a copy with a pretty name.
 	latexindent -w ${sources}
@@ -36,7 +36,7 @@ dead: ## Compiles all files and generates a copy with a dead name/change.
 	$(call replace_name,name2,name1)
 
 format: ## Formats all sources with latexmk.
-	latexmk -pdf $(word 1,$(sources))
+	latexindent -w ${sources}
 
 clean: ## Removes all compiled files.
 	rm -f ${output_file} ${pretty_file} ${pretty_file_dead}
