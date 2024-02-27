@@ -5,7 +5,7 @@
 # Written by Klaire Curde
 # ---------------------------------------------------------------------------
 
-sources := kcurde.tex sidebar.tex altacv.cls
+sources := main.tex sidebar.tex altacv.cls
 output_file := kcurde.pdf
 pretty_file := Curde_Klaire_Resume.pdf
 pretty_file_dead := Curde_Klaus_Resume.pdf
