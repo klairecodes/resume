@@ -5,7 +5,7 @@
 # Written by Klaire Curde
 # ---------------------------------------------------------------------------
 
-sources := main.tex sidebar.tex altacv.cls
+sources := kcurde.tex sidebar.tex altacv.cls
 output_file := kcurde # file extension will be appended
 pretty_file := Curde_Klaire_Resume.pdf
 pretty_file_dead := Curde_Klaus_Resume.pdf
@@ -38,8 +38,11 @@ dead: ## Compiles all files and generates a copy with a dead name/change.
 format: ## Formats all sources with latexmk.
 	latexindent -w ${sources}
 
-clean: ## Removes all compiled files.
-	rm -f ${output_file} ${pretty_file} ${pretty_file_dead}
+clean: ## Removes all extraneous files.
+	rm -f *.bcf *.run.xml *.synctex.gz *.out *.fls *.fdb_latexmk *.log *.blg *.bbl *.aux *.bak?
+
+nuke: ## Removes all compiled and extraneous files.
+	rm -f ${output_file} ${pretty_file} ${pretty_file_dead} *.pdf
 	rm -f *.bcf *.run.xml *.synctex.gz *.out *.fls *.fdb_latexmk *.log *.blg *.bbl *.aux *.bak?
 
 define help_text
