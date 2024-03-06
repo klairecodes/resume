@@ -6,7 +6,7 @@
 # ---------------------------------------------------------------------------
 
 sources := kcurde.tex sidebar.tex altacv.cls
-output_file := kcurde # file extension will be appended
+output_file := kcurde.pdf
 pretty_file := Curde_Klaire_Resume.pdf
 pretty_file_dead := Curde_Klaus_Resume.pdf
 name1 := KLAIRE
@@ -22,7 +22,7 @@ replace_name = \
 ${output_file}: ${sources}
 	latexindent -w ${sources}
 	#$(word 1,$(sources)) # Accesses only first file
-	latexmk -pdf -jobname=${output_file} $(word 1,$(sources))
+	latexmk -pdf $(word 1,$(sources))
 
 pretty: ## Compiles all files and generates a copy with a pretty name.
 	latexindent -w ${sources}
