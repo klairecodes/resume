@@ -42,6 +42,8 @@
 \RequirePackage{scrlfile}
 \RequirePackage{hyperref}
 
+\usepackage{darkmode}
+
 %% v1.1.5: added for convenience
 \newif\ifxetexorluatex
 \ifxetex
@@ -99,15 +101,30 @@
 
 \RequirePackage{xcolor}
 
-\definecolor{accent}{HTML}{004747}
-% \definecolor{bigline}{HTML}{328484}
-\definecolor{bigline}{HTML}{004747}
-\definecolor{highlight}{HTML}{4c4c4c}
 
-% \colorlet{accent}{blue!70!black}
-\colorlet{heading}{black}
-\colorlet{emphasis}{black}
-\colorlet{body}{black!80!white}
+%\enabledarkmode
+
+% Sets colors based on if dark mode is enabled or not (via "\enabledarkmode")
+\IfDarkModeTF{
+  \definecolor{accent}{HTML}{b2c7c7}
+  % \definecolor{bigline}{HTML}{328484}
+  \definecolor{bigline}{HTML}{b2c7c7}
+  \definecolor{highlight}{HTML}{4c4c4c}
+
+  % \colorlet{accent}{blue!70!black}
+  \colorlet{heading}{white}
+  \colorlet{emphasis}{white}
+  \colorlet{body}{white!80!black}
+}{
+  \definecolor{accent}{HTML}{004747}
+  \definecolor{bigline}{HTML}{004747}
+  \definecolor{highlight}{HTML}{4c4c4c}
+
+  \colorlet{heading}{black}
+  \colorlet{emphasis}{black}
+  \colorlet{body}{black!80!white}
+}
+
 \newcommand{\itemmarker}{{\small\textbullet}}
 \newcommand{\ratingmarker}{\faCircle}
 
