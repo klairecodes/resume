@@ -98,12 +98,40 @@
   \RequirePackage[newcommands]{ragged2e}
 \fi
 
+%% Environment variables. Yes I'm serious.
+\ExplSyntaxOn
+
+\NewDocumentCommand{\getenv}{om}
+ {
+  \sys_get_shell:nnN { kpsewhich ~ --var-value ~ #2 } { } \l_tmpa_tl
+  \tl_trim_spaces:N \l_tmpa_tl
+  \IfNoValueTF { #1 }
+   {
+    \tl_use:N \l_tmpa_tl
+   }
+   {
+    \tl_set_eq:NN #1 \l_tmpa_tl
+   }
+ }
+
+\ExplSyntaxOff
+
+% FIXME attempting to enabled dark mode with an environment variable
+%\getenv[\DARK]{DARK}
+%%\ifx\DARK\undefined
+  %%\enabledarkmode
+%%\else
+%%\fi
+
+%\if\relax\detokenize{\DARK}
+  %\enabledarkmode
+%\else\relax
+%\fi
 
 \RequirePackage{xcolor}
 
 
 %\enabledarkmode
-
 % Sets colors based on if dark mode is enabled or not (via "\enabledarkmode")
 \IfDarkModeTF{
   \definecolor{accent}{HTML}{b2c7c7}
