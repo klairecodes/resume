@@ -20,7 +20,7 @@ replace_name = \
 
 ## : Compiles all files.
 ${output_file}: ${sources}
-	latexindent -w ${sources}
+	latexindent -l ./localSettings.yaml -w ${sources}
 	#$(word 1,$(sources)) # Accesses only first file
 	latexmk -pdf $(word 1,$(sources))
 
@@ -36,7 +36,7 @@ dead: ## Compiles all files and generates a copy with a dead name/change.
 	$(call replace_name,name2,name1)
 
 format: ## Formats all sources with latexmk.
-	latexindent -w ${sources}
+	latexindent -l ./localSettings.yaml -w ${sources}
 
 clean: ## Removes all extraneous files.
 	rm -f *.bcf *.run.xml *.synctex.gz *.out *.fls *.fdb_latexmk *.log *.blg *.bbl *.aux *.bak?
