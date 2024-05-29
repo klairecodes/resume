@@ -259,12 +259,15 @@
 
 % 1: School
 % 2: Major
-% 3: Degree
-% 4: Graduation Date
-\newcommand{\cvedu}[4]{
+% 3: Graduation Date
+% 4: Immersion
+% 5: Concentration
+\newcommand{\cvedu}[5]{
 	{\color{emphasis}#1}\newline
 	\footnotesize
 	\color{accent}\textbf{#2} \hfill\color{accent}\faCalendar{ #3}\par
+	\color{accent}\scriptsize{#4} \par
+	\color{accent}\scriptsize{#5} \par
 }
 
 \newcommand{\cvachievement}[3]{%
