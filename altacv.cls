@@ -282,14 +282,15 @@
 % 2: Company
 % 3: Bullet list
 % 4: Date
+% 5: Skill list
 \newcommand{\cvexperience}[5]{%
-{\color{emphasis}\textbf{#1} | {\footnotesize\textbf{\color{accent}#2}}
-| \color{highlight} \textbf{\scriptsize\color{accent}#4}\par}
-\smallskip
-{\footnotesize\color{body}#3\par}
-\smallskip
-{#5}
-\medskip
+	{\color{emphasis}\textbf{#1}\hfill {\footnotesize\textbf{\color{accent}#2}}
+			| \color{highlight} \textbf{\scriptsize\color{accent}#4}\par}
+	\smallskip
+	{\footnotesize\color{body}#3\par}
+	\smallskip
+	{\footnotesize#5}
+	\medskip
 }
 
 % 1: Project Name
@@ -302,14 +303,14 @@
 	\smallskip
 	{\footnotesize\color{body}#3\par}
 	\smallskip
-	{#4}
+	{\footnotesize#4}
 	\medskip
 }
 
 % 1: Activity Name
 % 2: Position(s)
 % 3: Bullet list
-\newcommand{\cvactivity}[4]{%
+\newcommand{\cvactivity}[3]{%
 	\normalsize
 	{\color{emphasis}\textbf{#1}\hfill\par}
 	\footnotesize
@@ -318,6 +319,17 @@
 	\begin{itemize}
 		{\small\color{body}#3\par}
 	\end{itemize}
+	\smallskip
+}
+
+% TODO: having this separate class is silly, generify \cvactivity
+% 1: Activity Name
+% 2: Position(s)
+\newcommand{\cvactivityshort}[3]{%
+	\normalsize
+	{\color{emphasis}\textbf{#1}\hfill\par}
+	\footnotesize
+	#2
 	\smallskip
 }
 
@@ -340,7 +352,16 @@
 }
 
 \newcommand{\cvtagsmall}[1]{%
-	\tikz[baseline]\node[anchor=base,draw=body!40,rounded corners,inner xsep=1ex,inner ysep =0.25ex,text height=1.0ex,text depth=.25ex]{#1};
+	\tikz[baseline]\node[
+		anchor=base,
+		draw=body!40,
+		rounded corners,
+		inner xsep=1ex,
+		inner ysep =0.25ex,
+		text height=1.0ex,
+		text depth=.25ex
+	]
+	{#1};
 }
 
 \newcommand{\cvskill}[2]{%
