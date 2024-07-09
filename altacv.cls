@@ -47,13 +47,13 @@
 %% v1.1.5: added for convenience
 \newif\ifxetexorluatex
 \ifxetex
-	\xetexorluatextrue
+  \xetexorluatextrue
 \else
-	\ifluatex
-		\xetexorluatextrue
-	\else
-		\xetexorluatexfalse
-	\fi
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
 \fi
 
 %% v1.1: Optionally load academicons
@@ -65,37 +65,37 @@
 %% Academicons to be installed in OS fonts
 %% so can be loaded directly
 \@ifl@t@r\fmtversion{2018/04/01}{%
-	\RequirePackage{academicons}
-	}{%
-	% TL2017
-	\@ifl@t@r\fmtversion{2017/04/01}{%
-		\@ifpackagelater{academicons}{2018/03/01}{%
-		\RequirePackage{academicons}
-		}{%
-		\let\ori@newfontfamily\newfontfamily%
-		\renewcommand{\newfontfamily}[2]{}
-		\RequirePackage{academicons}
-		\let\newfontfamily\ori@newfontfamily
-		\newfontfamily{\AI}{academicons.ttf}
-		}
-		}{% TL2016 requires the package to be loaded before
-		% the version can be checked. Only added because
-		% Overleaf v1 still runs TL2016; will be removed
-		% when v1 is completely retired.
-		\let\ori@newfontfamily\newfontfamily%
-		\renewcommand{\newfontfamily}[2]{}
-		\RequirePackage{academicons}
-		\let\newfontfamily\ori@newfontfamily
-		\newfontfamily{\AI}{academicons.ttf}
-		}
-		}
-	\else
-		\ClassError{AltaCV}{academicons unsupported by latex or pdflatex. Please compile with xelatex or lualatex}{Please compile with xelatex or lualatex to use the academicons option}
-	\fi
+  \RequirePackage{academicons}
+  }{%
+  % TL2017
+  \@ifl@t@r\fmtversion{2017/04/01}{%
+    \@ifpackagelater{academicons}{2018/03/01}{%
+    \RequirePackage{academicons}
+    }{%
+    \let\ori@newfontfamily\newfontfamily%
+    \renewcommand{\newfontfamily}[2]{}
+    \RequirePackage{academicons}
+    \let\newfontfamily\ori@newfontfamily
+    \newfontfamily{\AI}{academicons.ttf}
+    }
+    }{% TL2016 requires the package to be loaded before
+    % the version can be checked. Only added because
+    % Overleaf v1 still runs TL2016; will be removed
+    % when v1 is completely retired.
+    \let\ori@newfontfamily\newfontfamily%
+    \renewcommand{\newfontfamily}[2]{}
+    \RequirePackage{academicons}
+    \let\newfontfamily\ori@newfontfamily
+    \newfontfamily{\AI}{academicons.ttf}
+    }
+    }
+  \else
+    \ClassError{AltaCV}{academicons unsupported by latex or pdflatex. Please compile with xelatex or lualatex}{Please compile with xelatex or lualatex to use the academicons option}
+  \fi
 \fi
 
 \if@raggedtwoe
-	\RequirePackage[newcommands]{ragged2e}
+  \RequirePackage[newcommands]{ragged2e}
 \fi
 
 %% Environment variables. Yes I'm serious.
@@ -103,15 +103,15 @@
 
 \NewDocumentCommand{\getenv}{om}
 {
-	\sys_get_shell:nnN { kpsewhich ~ --var-value ~ #2 } { } \l_tmpa_tl
-	\tl_trim_spaces:N \l_tmpa_tl
-	\IfNoValueTF { #1 }
-	{
-		\tl_use:N \l_tmpa_tl
-	}
-	{
-		\tl_set_eq:NN #1 \l_tmpa_tl
-	}
+  \sys_get_shell:nnN { kpsewhich ~ --var-value ~ #2 } { } \l_tmpa_tl
+  \tl_trim_spaces:N \l_tmpa_tl
+  \IfNoValueTF { #1 }
+  {
+    \tl_use:N \l_tmpa_tl
+  }
+  {
+    \tl_set_eq:NN #1 \l_tmpa_tl
+  }
 }
 
 \ExplSyntaxOff
@@ -134,23 +134,23 @@
 %\enabledarkmode
 % Sets colors based on if dark mode is enabled or not (via "\enabledarkmode")
 \IfDarkModeTF{
-	\definecolor{accent}{HTML}{b2c7c7}
-	% \definecolor{bigline}{HTML}{328484}
-	\definecolor{bigline}{HTML}{b2c7c7}
-	\definecolor{highlight}{HTML}{4c4c4c}
+  \definecolor{accent}{HTML}{b2c7c7}
+  % \definecolor{bigline}{HTML}{328484}
+  \definecolor{bigline}{HTML}{b2c7c7}
+  \definecolor{highlight}{HTML}{4c4c4c}
 
-	% \colorlet{accent}{blue!70!black}
-	\colorlet{heading}{white}
-	\colorlet{emphasis}{white}
-	\colorlet{body}{white!80!black}
+  % \colorlet{accent}{blue!70!black}
+  \colorlet{heading}{white}
+  \colorlet{emphasis}{white}
+  \colorlet{body}{white!80!black}
 }{
-	\definecolor{accent}{HTML}{004747}
-	\definecolor{bigline}{HTML}{004747}
-	\definecolor{highlight}{HTML}{4c4c4c}
+  \definecolor{accent}{HTML}{004747}
+  \definecolor{bigline}{HTML}{004747}
+  \definecolor{highlight}{HTML}{4c4c4c}
 
-	\colorlet{heading}{black}
-	\colorlet{emphasis}{black}
-	\colorlet{body}{black!80!white}
+  \colorlet{heading}{black}
+  \colorlet{emphasis}{black}
+  \colorlet{body}{black!80!white}
 }
 
 \newcommand{\itemmarker}{{\small\textbullet}}
@@ -173,8 +173,8 @@
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
 
 \newenvironment{fullwidth}{%
-	\begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
-		{\end{adjustwidth}}
+  \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
+    {\end{adjustwidth}}
 
 \newcommand{\emailsymbol}{\faAt}
 \newcommand{\phonesymbol}{\faPhone}
@@ -207,24 +207,24 @@
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 
 \newcommand{\makecvheader}{%
-	\begingroup
-	%\ifdef{\@photodiameter}{\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}}{}%
-	\raggedright\color{emphasis}%
-	{\fontsize{36}{36}\bfseries\MakeUppercase{\@name}\par}
-	\medskip
-	{\large\bfseries\color{accent}\@tagline\par}
-	\medskip
-	{\footnotesize\bfseries\@personalinfo\par}
-	%\ifdef{\@photodiameter}{%
-	%\end{minipage}\hfill%
-	%\begin{minipage}{\@photodiameter}
-	%\if@normalphoto
-	%\includegraphics[width=\linewidth]{\@photo}
-	%\else
-	%\tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
-	%\fi%
-	%\end{minipage}\par}{}%
-	\endgroup\medskip
+  \begingroup
+  %\ifdef{\@photodiameter}{\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}}{}%
+  \raggedright\color{emphasis}%
+  {\fontsize{36}{36}\bfseries\MakeUppercase{\@name}\par}
+  \medskip
+  {\large\bfseries\color{accent}\@tagline\par}
+  \medskip
+  {\footnotesize\bfseries\@personalinfo\par}
+  %\ifdef{\@photodiameter}{%
+  %\end{minipage}\hfill%
+  %\begin{minipage}{\@photodiameter}
+  %\if@normalphoto
+  %\includegraphics[width=\linewidth]{\@photo}
+  %\else
+  %\tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
+  %\fi%
+  %\end{minipage}\par}{}%
+  \endgroup\medskip
 }
 
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
@@ -237,24 +237,24 @@
 }
 
 \newcommand{\cvsubsection}[1]{%
-	{\color{emphasis}\large\bfseries{#1}\par}\medskip
+  {\color{emphasis}\large\bfseries{#1}\par}\medskip
 }
 
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvevent}[4]{%
-	{\color{emphasis}#1\par}
-	\smallskip\normalsize
-	\ifstrequal{#2}{}{}{
-		\footnotesize\textbf{\color{accent}#2}\par
-		\smallskip}
-	\ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\scriptsize\color{accent}\faCalendar\hspace{0.5em}\color{black}#3}}}%
-	\ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
+  {\color{emphasis}#1\par}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+    \footnotesize\textbf{\color{accent}#2}\par
+    \smallskip}
+  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\scriptsize\color{accent}\faCalendar\hspace{0.5em}\color{black}#3}}}%
+  \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
 
-	\medskip\normalsize
+  \medskip\normalsize
 }
 
 \newcommand{\adate}[1]{
-	{\scriptsize| \color{accent}\faCalendar\textbf{ #1}}
+  {\scriptsize| \color{accent}\faCalendar\textbf{ #1}}
 }
 
 % 1: School
@@ -263,19 +263,19 @@
 % 4: Immersion
 % 5: Concentration
 \newcommand{\cvedu}[5]{
-	{\color{emphasis}#1}\newline
-	\footnotesize
-	\color{accent}\textbf{#2} \hfill\color{accent}\faCalendar{ #3}\par
-	\color{accent}\scriptsize{#4} \par
-	\color{accent}\scriptsize{#5} \par
+  {\color{emphasis}#1}\newline
+  \footnotesize
+  \color{accent}\textbf{#2} \hfill\color{accent}\faCalendar{ #3}\par
+  \color{accent}\scriptsize{#4} \par
+  \color{accent}\scriptsize{#5} \par
 }
 
 \newcommand{\cvachievement}[3]{%
-	\begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-		\multirow{4}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2} \\
-		                                        & #3
-	\end{tabularx}%
-	%\smallskip
+  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+    \multirow{4}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2} \\
+                                            & #3
+  \end{tabularx}%
+  %\smallskip
 }
 
 % 1: Position
@@ -284,13 +284,13 @@
 % 4: Date
 % 5: Skill list
 \newcommand{\cvexperience}[5]{%
-	{\color{emphasis}\textbf{#1}\hfill {\footnotesize\textbf{\color{accent}#2}}
-			| \color{highlight} \textbf{\scriptsize\color{accent}#4}\par}
-	\smallskip
-	{\footnotesize\color{body}#3\par}
-	\smallskip
-	{\footnotesize#5}
-	\medskip
+  {\color{emphasis}\textbf{#1}\hfill {\footnotesize\textbf{\color{accent}#2}}
+      | \color{highlight} \textbf{\scriptsize\color{accent}#4}\par}
+  \smallskip
+  {\footnotesize\color{body}#3\par}
+  \smallskip
+  {\footnotesize#5}
+  \medskip
 }
 
 % 1: Project Name
@@ -298,141 +298,141 @@
 % 3: Bullet list
 % 4: Skills
 \newcommand{\cvproject}[4]{%
-	{\color{emphasis}\textbf{#1} \hfill \color{highlight}}
-		{\footnotesize\textbf{\color{accent}#2}\par}
-	\smallskip
-	{\footnotesize\color{body}#3\par}
-	\smallskip
-	{\footnotesize#4}
-	\medskip
+  {\color{emphasis}\textbf{#1} \hfill \color{highlight}}
+    {\footnotesize\textbf{\color{accent}#2}\par}
+  \smallskip
+  {\footnotesize\color{body}#3\par}
+  \smallskip
+  {\footnotesize#4}
+  \medskip
 }
 
 % 1: Activity Name
 % 2: Position(s)
 % 3: Bullet list
 \newcommand{\cvactivity}[3]{%
-	\normalsize
-	{\color{emphasis}\textbf{#1}\hfill\par}
-	\footnotesize
-	#2
-	\smallskip
-	\begin{itemize}
-		{\small\color{body}#3\par}
-	\end{itemize}
-	\smallskip
+  \normalsize
+  {\color{emphasis}\textbf{#1}\hfill\par}
+  \footnotesize
+  #2
+  \smallskip
+  \begin{itemize}
+    {\small\color{body}#3\par}
+  \end{itemize}
+  \smallskip
 }
 
 % TODO: having this separate class is silly, generify \cvactivity
 % 1: Activity Name
 % 2: Position(s)
 \newcommand{\cvactivityshort}[3]{%
-	\normalsize
-	{\color{emphasis}\textbf{#1}\hfill\par}
-	\footnotesize
-	#2
-	\smallskip
+  \normalsize
+  {\color{emphasis}\textbf{#1}\hfill\par}
+  \footnotesize
+  #2
+  \smallskip
 }
 
 \newcommand{\cvcourse}[2]{%
-	{\color{black}\textbf{#1}\par}
-		{\smallskip\footnotesize#2\par\medskip}
+  {\color{black}\textbf{#1}\par}
+    {\smallskip\footnotesize#2\par\medskip}
 }
 \newcommand{\cvtag}[1]{%
-	\tikz[baseline]\node[
-		anchor=base,
-		draw=body!40,
-		thick,
-		rounded corners,
-		inner xsep=1ex,
-		inner ysep =0.75ex,
-		text height=1.5ex,
-		text depth=.25ex
-	]
-	{#1};
+  \tikz[baseline]\node[
+    anchor=base,
+    draw=body!40,
+    thick,
+    rounded corners,
+    inner xsep=1ex,
+    inner ysep =0.75ex,
+    text height=1.5ex,
+    text depth=.25ex
+  ]
+  {#1};
 }
 
 \newcommand{\cvtagsmall}[1]{%
-	\tikz[baseline]\node[
-		anchor=base,
-		draw=body!40,
-		rounded corners,
-		inner xsep=1ex,
-		inner ysep =0.25ex,
-		text height=1.0ex,
-		text depth=.25ex
-	]
-	{#1};
+  \tikz[baseline]\node[
+    anchor=base,
+    draw=body!40,
+    rounded corners,
+    inner xsep=1ex,
+    inner ysep =0.25ex,
+    text height=1.0ex,
+    text depth=.25ex
+  ]
+  {#1};
 }
 
 \newcommand{\cvskill}[2]{%
-	\textcolor{emphasis}{\textbf{#1}}\hfill
-	\foreach \x in {1,...,5}{%
-			\space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
+  \textcolor{emphasis}{\textbf{#1}}\hfill
+  \foreach \x in {1,...,5}{%
+      \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
 \newcommand{\wheelchart}[4][0]{%
-	\begingroup\centering
-	\def\innerradius{#3}%
-	\def\outerradius{#2}%
-	% Calculate total
-	\pgfmathsetmacro{\totalnum}{0}%
-	\foreach \value/\colour/\name in {#4} {%
-			\pgfmathparse{\value+\totalnum}%
-			\global\let\totalnum=\pgfmathresult%
-		}%
-	\begin{tikzpicture}
+  \begingroup\centering
+  \def\innerradius{#3}%
+  \def\outerradius{#2}%
+  % Calculate total
+  \pgfmathsetmacro{\totalnum}{0}%
+  \foreach \value/\colour/\name in {#4} {%
+      \pgfmathparse{\value+\totalnum}%
+      \global\let\totalnum=\pgfmathresult%
+    }%
+  \begin{tikzpicture}
 
-		% Calculate the thickness and the middle line of the wheel
-		\pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
-		\pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
-		\pgfmathsetmacro{\totalrot}{-90 + #1}
+    % Calculate the thickness and the middle line of the wheel
+    \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
+    \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
+    \pgfmathsetmacro{\totalrot}{-90 + #1}
 
-		% Rotate so we start from the top
-		\begin{scope}[rotate=\totalrot]
+    % Rotate so we start from the top
+    \begin{scope}[rotate=\totalrot]
 
-			% Loop through each value set. \cumnum keeps track of where we are in the wheel
-			\pgfmathsetmacro{\cumnum}{0}
-			\foreach \value/\width/\colour/\name in {#4} {
-					\pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
+      % Loop through each value set. \cumnum keeps track of where we are in the wheel
+      \pgfmathsetmacro{\cumnum}{0}
+      \foreach \value/\width/\colour/\name in {#4} {
+          \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
 
-					% Calculate the percent value
-					\pgfmathsetmacro{\percentage}{\value/\totalnum*100}
-					% Calculate the mid angle of the colour segments to place the labels
-					\pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
+          % Calculate the percent value
+          \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
+          % Calculate the mid angle of the colour segments to place the labels
+          \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
 
-					% This is necessary for the labels to align nicely
-					\pgfmathparse{
-						(-\midangle>180?"west":"east")
-					} \edef\textanchor{\pgfmathresult}
-					\pgfmathparse{
-						(-\midangle>180?"flush left":"flush right")
-					} \edef\textalign{\pgfmathresult}
-					\pgfmathsetmacro\labelshiftdir{1-2*(-\midangle<180)}
+          % This is necessary for the labels to align nicely
+          \pgfmathparse{
+            (-\midangle>180?"west":"east")
+          } \edef\textanchor{\pgfmathresult}
+          \pgfmathparse{
+            (-\midangle>180?"flush left":"flush right")
+          } \edef\textalign{\pgfmathresult}
+          \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle<180)}
 
-					% Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
-					\filldraw[draw=white,fill=\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
-					(-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
+          % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
+          \filldraw[draw=white,fill=\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
+          (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
 
-					% Draw the data labels
-					\draw  [*-,thin,emphasis] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=1ex, outer sep=0pt, text width=\width,anchor=\textanchor,align=\textalign,font=\small,text=body]{\name};
-					% Set the old cumulated angle to the new value
-					\global\let\cumnum=\newcumnum
-				}
-		\end{scope}
-		%      \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
-	\end{tikzpicture}\par
-	\endgroup
+          % Draw the data labels
+          \draw  [*-,thin,emphasis] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=1ex, outer sep=0pt, text width=\width,anchor=\textanchor,align=\textalign,font=\small,text=body]{\name};
+          % Set the old cumulated angle to the new value
+          \global\let\cumnum=\newcumnum
+        }
+    \end{scope}
+    %      \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
+  \end{tikzpicture}\par
+  \endgroup
 }
 
 \newcommand{\cvref}[3]{%
-	\smallskip
-	\textcolor{emphasis}{\textbf{#1}}\par
-	\begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em]
-		\item[\normalfont\emailsymbol] #2
-		\item[\small\normalfont\mailsymbol] #3
-	\end{description}
-	%   \medskip
+  \smallskip
+  \textcolor{emphasis}{\textbf{#1}}\par
+  \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em]
+    \item[\normalfont\emailsymbol] #2
+    \item[\small\normalfont\mailsymbol] #3
+  \end{description}
+  %   \medskip
 }
 
 \newenvironment{cvcolumn}[1]{\begin{minipage}[t]{#1}\raggedright}{\end{minipage}}
@@ -450,13 +450,13 @@
 % v1.1.2: make it easier to add a sidebar aligned with top of next page
 \RequirePackage{afterpage}
 \newcommand{\addsidebar}[2][]{\marginpar{%
-		\ifstrequal{#1}{}{}{\vspace*{#1}}%
-		\input{#2}}%
+    \ifstrequal{#1}{}{}{\vspace*{#1}}%
+    \input{#2}}%
 }
 \newcommand{\addnextpagesidebar}[2][]{\afterpage{\addsidebar[#1]{#2}}}
 
 \AtBeginDocument{%
-	\pagestyle{empty}
-	\color{body}
-	\raggedright
+  \pagestyle{empty}
+  \color{body}
+  \raggedright
 }
