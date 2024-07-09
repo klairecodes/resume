@@ -7,7 +7,7 @@
 
 sources := kcurde.tex sidebar.tex altacv.cls
 output_file := kcurde.pdf
-pretty_file := Curde_Klaire_Resume.pdf
+pretty_file := Klaire_Curde_resume.pdf
 pretty_file_dead := Curde_Klaus_Resume.pdf
 name1 := KLAIRE
 name2 := KLAUS
