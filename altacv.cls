@@ -331,7 +331,9 @@
 	\normalsize
 	{\color{emphasis}\textbf{#1}\hfill\par}
 	\footnotesize
-	#2
+	\begin{itemize}
+		#2
+	\end{itemize}
 	\smallskip
 }
 
