@@ -184,6 +184,7 @@
 % \newcommand{\github}{\faGithub}
 \newcommand{\twittersymbol}{\faTwitter}
 \newcommand{\githubsymbol}{\faGithub}
+\newcommand{\facebooksymbol}{\faFacebook}
 \newcommand{\orcidsymbol}{\aiOrcid}
 \newcommand{\mailsymbol}{\faEnvelope}
 \newcommand{\sitesymbol}{\faCoffee}
@@ -200,6 +201,7 @@
 \newcommand{\twitter}[1]{\printinfo{\twittersymbol}{#1}}
 \newcommand{\linkedin}[1]{\printinfo{\linkedinsymbol}{#1}}
 \newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
+\newcommand{\facebook}[1]{\printinfo{\facebooksymbol}{#1}}
 \newcommand{\orcid}[1]{\printinfo{\orcidsymbol}{#1}}
 \newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
 \newcommand{\site}[1]{\printinfo{\sitesymbol}{#1}}
