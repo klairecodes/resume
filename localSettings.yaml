@@ -73,7 +73,7 @@ onlyOneBackUp: 1
 #
 # If maxNumberOfBackUps is set to 0 (or less) then infinitely
 # many backups are possible, unless onlyOneBackUp is switched on
-maxNumberOfBackUps: 0
+maxNumberOfBackUps: 1
 
 # some users may wish to cycle through back up files.
 #
